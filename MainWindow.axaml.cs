@@ -32,16 +32,6 @@ public partial class MainWindow : Window
 
     private void Calculate(Func<decimal, decimal, decimal> operation)
     {
-        try
-        {
-            var num1 = getNumberFromTextBox(Num1);
-            var num2 = getNumberFromTextBox(Num2);
-            var result = operation(num1, num2);
-            Result.Text = result.ToString();
-        }
-        catch (Exception ex)
-        {
-            Result.Text = $"Error: {ex.Message}";
-        }
+       
     }
 }

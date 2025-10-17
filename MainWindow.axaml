@@ -4,17 +4,58 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="200" d:DesignHeight="450"
         x:Class="Calculator.MainWindow"
-        Title="Calculator">
-        
-    <StackPanel Margin="20" Spacing="10"> 
-        <TextBox x:Name="Input1" Watermark="Enter Number"/>
+        Title="Calculator"
+        Width="300" Height="400">
 
-        <StackPanel Orientation="Horizontal" Spacing="10">
-            <Button Content="+" Click="OnAdd"/>
-            <Button Content="-" Click="OnSubtract"/>
-            <Button Content="×" Click="OnMultiply"/>
-            <Button Content="÷" Click="OnDivide"/>
-        </StackPanel>
+        <!--Min. values-->
+        <Window.Styles>
+            <Style Selector="Button">
+                <Setter Property="MinWidth" Value="60"/>
+                <Setter Property="MinHeight" Value="40"/>
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+        </Window.Styles>
+
+    
+    <!--Input Window-->
+    <StackPanel Margin="20" Spacing="10"> 
+        <TextBox x:Name="Input1" Watermark="Enter Number" FontSize="24" 
+                HorizontalContentAlignment="Left" IsReadOnly="True"/>
+                
+
+         <!-- Numberpad -->
+        <Grid Margin="5,10,5,10" RowDefinitions="Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,*,*,*">
+            <!-- 1. Row -->
+            <Button Grid.Row="0" Grid.Column="0" Content="C" CornerRadius="180"/>
+            <Button Grid.Row="0" Grid.Column="1" Content="+/-" CornerRadius="180"/>
+            <Button Grid.Row="0" Grid.Column="2" Content="AC" CornerRadius="180"/>
+            <Button Grid.Row="0" Grid.Column="3" Content="÷" CornerRadius="180"/>
+
+            <!-- 2. Row -->
+            <Button Grid.Row="1" Grid.Column="0" Content="7"/>
+            <Button Grid.Row="1" Grid.Column="1" Content="8"/>
+            <Button Grid.Row="1" Grid.Column="2" Content="9"/>
+            <Button Grid.Row="1" Grid.Column="3" Content="×" CornerRadius="180"/>
+
+            <!-- 3. Row -->
+            <Button Grid.Row="2" Grid.Column="0" Content="4"/>
+            <Button Grid.Row="2" Grid.Column="1" Content="5"/>
+            <Button Grid.Row="2" Grid.Column="2" Content="6"/>
+            <Button Grid.Row="2" Grid.Column="3" Content="-" CornerRadius="180"/>
+
+            <!-- 4. Row -->
+            <Button Grid.Row="3" Grid.Column="0" Content="1"/>
+            <Button Grid.Row="3" Grid.Column="1" Content="2"/>
+            <Button Grid.Row="3" Grid.Column="2" Content="3"/>
+            <Button Grid.Row="3" Grid.Column="3" Content="+" CornerRadius="180"/>
+
+            <!-- 5. Row -->
+            <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="0" HorizontalAlignment="Stretch" Margin="0,0,2.5,0"/> <!-- nimmt 2 Spalten ein -->
+            <Button Grid.Row="4" Grid.Column="2" Content="."/>
+            <Button Grid.Row="4" Grid.Column="3" Content="=" CornerRadius="180"/>
+        </Grid>
+
+    
 
     </StackPanel>
 </Window>
