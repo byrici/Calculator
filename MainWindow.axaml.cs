@@ -5,33 +5,29 @@ namespace Calculator;
 
 public partial class MainWindow : Window
 {
+    private decimal? _firstNumber = null;
+    private string? _Operator = null;
+    private bool _isNewEntry = false;
     public MainWindow()
     {
         InitializeComponent();
     }
 
-    private decimal getNumberFromTextBox(TextBox textBox)
+    private void OnNumberClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        if (decimal.TryParse(textBox.Text, out var value))
+        if (sender is Button button)
         {
-            return value;
+            string value = button.Content.ToString() ?? "";
+
+            if (_isNewEntry)
+            {
+                Display.Text = value;
+                _isNewEntry = false;
+            }
+            else
+            {
+                Display.Text += value;
+            }
         }
-        else
-        {
-            throw new Exception("Invalid number format");
-        }
-    }
-
-    private void OnAdd(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
-    {
-
-    }
-    
-
-
-
-    private void Calculate(Func<decimal, decimal, decimal> operation)
-    {
-       
     }
 }

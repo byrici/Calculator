@@ -19,7 +19,7 @@
     
     <!--Input Window-->
     <StackPanel Margin="20" Spacing="10"> 
-        <TextBox x:Name="Input1" Watermark="Enter Number" FontSize="24" 
+        <TextBox x:Name="Display" Watermark="Enter Number" FontSize="24" 
                 HorizontalContentAlignment="Left" IsReadOnly="True"/>
                 
 
@@ -32,25 +32,25 @@
             <Button Grid.Row="0" Grid.Column="3" Content="÷" CornerRadius="180"/>
 
             <!-- 2. Row -->
-            <Button Grid.Row="1" Grid.Column="0" Content="7"/>
-            <Button Grid.Row="1" Grid.Column="1" Content="8"/>
-            <Button Grid.Row="1" Grid.Column="2" Content="9"/>
+            <Button Grid.Row="1" Grid.Column="0" Content="7" Click="OnNumberClick" />
+            <Button Grid.Row="1" Grid.Column="1" Content="8" Click="OnNumberClick"/>
+            <Button Grid.Row="1" Grid.Column="2" Content="9" Click="OnNumberClick"/>
             <Button Grid.Row="1" Grid.Column="3" Content="×" CornerRadius="180"/>
 
             <!-- 3. Row -->
-            <Button Grid.Row="2" Grid.Column="0" Content="4"/>
-            <Button Grid.Row="2" Grid.Column="1" Content="5"/>
-            <Button Grid.Row="2" Grid.Column="2" Content="6"/>
+            <Button Grid.Row="2" Grid.Column="0" Content="4" Click="OnNumberClick"/>
+            <Button Grid.Row="2" Grid.Column="1" Content="5" Click="OnNumberClick"/>
+            <Button Grid.Row="2" Grid.Column="2" Content="6" Click="OnNumberClick"/>
             <Button Grid.Row="2" Grid.Column="3" Content="-" CornerRadius="180"/>
 
             <!-- 4. Row -->
-            <Button Grid.Row="3" Grid.Column="0" Content="1"/>
-            <Button Grid.Row="3" Grid.Column="1" Content="2"/>
-            <Button Grid.Row="3" Grid.Column="2" Content="3"/>
+            <Button Grid.Row="3" Grid.Column="0" Content="1" Click="OnNumberClick"/>
+            <Button Grid.Row="3" Grid.Column="1" Content="2" Click="OnNumberClick"/>
+            <Button Grid.Row="3" Grid.Column="2" Content="3" Click="OnNumberClick"/>
             <Button Grid.Row="3" Grid.Column="3" Content="+" CornerRadius="180"/>
 
             <!-- 5. Row -->
-            <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="0" HorizontalAlignment="Stretch" Margin="0,0,2.5,0"/> <!-- nimmt 2 Spalten ein -->
+            <Button Grid.Row="4" Grid.Column="0" Click="OnNumberClick" Grid.ColumnSpan="2" Content="0" HorizontalAlignment="Stretch" Margin="0,0,2.5,0"/> <!-- nimmt 2 Spalten ein -->
             <Button Grid.Row="4" Grid.Column="2" Content="."/>
             <Button Grid.Row="4" Grid.Column="3" Content="=" CornerRadius="180"/>
         </Grid>
