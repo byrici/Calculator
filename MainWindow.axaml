@@ -27,7 +27,7 @@
         <Grid Margin="5,10,5,10" RowDefinitions="Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,*,*,*">
             <!-- 1. Row -->
             <Button Grid.Row="0" Grid.Column="0" Content="C" Grid.ColumnSpan="2" Click="OnCleanClick" HorizontalAlignment="Stretch" Margin="0,0,2.5,0" CornerRadius="180" HorizontalContentAlignment="Center"/>
-            <Button Grid.Row="0" Grid.Column="2" Content="+/-" CornerRadius="180" HorizontalContentAlignment="Center"/>
+            <Button Grid.Row="0" Grid.Column="2" Content="+/-" Click="OnPlusMinusClick" CornerRadius="180" HorizontalContentAlignment="Center"/>
             <Button Grid.Row="0" Grid.Column="3" Content="÷" Click="OnOperatorClick" CornerRadius="180" HorizontalContentAlignment="Center"/>
 
             <!-- 2. Row -->

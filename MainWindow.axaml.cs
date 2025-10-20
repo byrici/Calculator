@@ -35,6 +35,17 @@ public partial class MainWindow : Window
     {
         if (sender is Button button)
         {
+
+            string op = button.Content.ToString();
+
+            if (string.IsNullOrWhiteSpace(Display.Text) && op == "-")
+            {
+                Display.Text = "-";
+                _isNewEntry = false;
+                _Operator = null;
+                return;
+            }
+
             try
             {
                 _firstNumber = Convert.ToDecimal(Display.Text);
@@ -77,6 +88,21 @@ public partial class MainWindow : Window
                 _firstNumber = null;
                 _Operator = null;
             }
+        }
+    }
+
+    private void OnPlusMinusClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        if (sender is Button button)
+        {
+            string value = Display.Text;
+            decimal currentNumber = Convert.ToDecimal(value);
+
+            if (currentNumber == 0)
+                return;
+            
+            currentNumber = -currentNumber;
+            Display.Text = currentNumber.ToString();
         }
     }
 
