@@ -34,4 +34,26 @@ Beispiel: `12` `+` `5` `=` → **17**
 - [Avalonia UI](https://avaloniaui.net/)
 - .NET 8
 
+## Anwendung starten
+
+### Voraussetzungen
+
+- **.NET SDK** (mindestens Version 8.0)  
+- Ein Editor wie [Visual Studio Code](https://code.visualstudio.com/) oder [Visual Studio](https://visualstudio.microsoft.com/)
+
+### Schritte
+
+1. **Repository klonen**
+
+   ```bash
+   git clone https://github.com/byrici/Calculator.git
+   
+
+2. **Anwendung starten**
+
+    ```bash
+    cd Calculator
+    dotnet run
+
+
 ---
